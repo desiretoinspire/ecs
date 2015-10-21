@@ -37,3 +37,23 @@ set a %B0001001000110100,
 set b %B1001100001110110,
 eval,
 output;
+
+set a %B1010101010101010,
+set b %B1100110011001100,
+eval,
+output;
+
+set a %B1010101010101010,
+set b %B1111000011110000,
+eval,
+output;
+
+set a %B1100110011001100,
+set b %B1111000011110000,
+eval,
+output;
+
+set a %B1010101010101010,
+set b %B1111111100000000,
+eval,
+output;

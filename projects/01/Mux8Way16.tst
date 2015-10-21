@@ -87,3 +87,43 @@ output;
 set sel 7,
 eval,
 output;
+
+set a %B1010110000110001,
+set b %B0100011000110011,
+set c %B0001101100001000,
+set d %B1000100001100101,
+set e %B1010111011001110,
+set f %B1011101110101101,
+set g %B0100101001111110,
+set h %B1101101111010101,
+set sel 0,
+eval,
+output;
+
+set sel 1,
+eval,
+output;
+
+set sel 2,
+eval,
+output;
+
+set sel 3,
+eval,
+output;
+
+set sel 4,
+eval,
+output;
+
+set sel 5,
+eval,
+output;
+
+set sel 6,
+eval,
+output;
+
+set sel 7,
+eval,
+output;

@@ -47,3 +47,43 @@ output;
 set sel 3,
 eval,
 output;
+
+set a %B1010101010101010,
+set b %B1100110011001100,
+set c %B1111000011110000,
+set d %B1111111100000000,
+set sel 0,
+eval,
+output;
+
+set sel 1,
+eval,
+output;
+
+set sel 2,
+eval,
+output;
+
+set sel 3,
+eval,
+output;
+
+set a %B0111010111011101,
+set b %B0011001011000011,
+set c %B1011000100110010,
+set d %B0001010100000101,
+set sel 0,
+eval,
+output;
+
+set sel 1,
+eval,
+output;
+
+set sel 2,
+eval,
+output;
+
+set sel 3,
+eval,
+output;
