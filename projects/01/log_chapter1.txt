@@ -1,0 +1,4 @@
+If done in a group, absolutely need a version tracking tool. Using google Drive is turning out to be a massive headache.
+The basic MUX that is in Mux.hdl is a 2-MUX. We can implement a 4x1 MUX using 3 2x1 MUX
+Similiarly 8x1 MUX can be implemented using 2 4x1 MUX and 1 2x1 MUX
+for passing an array, pass each induvidual elements as if if passing array sel[2] then do sel[0]=value, sel[1]=value
