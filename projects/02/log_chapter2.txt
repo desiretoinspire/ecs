@@ -1,0 +1,22 @@
+Boolean Arithmetic
+
+HALF ADDER - add 2 bits , Sum = Xor(a,b) , Carry = And(a,b)
+
+FULL ADDER - add with carry , Sum = Xor(Xor(a,b),c) , Carry = Xor(a,b).c+a.b
+
+ADDER16 - our Adder(Ripple Carry Adder) implementation is rather inefficient,due to long delay incurred while the carry bit propagates from LSB pair to MSB pair.this can be solved using Carry Lookahead Adder(CLA) technique.
+CLA
+----
+for each bit in a binary sequence to be added,the CLA logic will determine whether that bit pair will generate a carry or propagate a carry.This allows the circuit to preprocess the 2 numbers being added to determine the carry ahead of time.
+	a digit of addition carry occurs only when either the addition generates (or) the next LSBs carries and addition propagates
+
+ie generate Gi = Ai.Bi
+propagate   Pi = (Ai+Bi)
+therefore   Ci = Gi + Pi.Ci-1
+
+INCREMENTER
+
+ALU - limited functionalities(No Mul,Div,floating point arithmetics)
+6 control bits, so 2^6= 64 possible functions on 16 bit input pairs including 0,1,-1,x,y,-x,-y,!x,!y,x+y,x-y,y-x,x&y,x|y,x+1,x-1,y+1,y-1,x->y,y->x,nand,..
+
+!!sub bus of an internal node may not be used
