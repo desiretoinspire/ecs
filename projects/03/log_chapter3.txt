@@ -1,0 +1,101 @@
+Sequential Logic
+----------------
+
+Clock
+-----
+
+clock signal is represented using "tick" (starts low phase) and "tock" (starts high phase)
+
+The elapsed time between beginning of a "tick" and the end of subsequent "tock" is called 'cycle' - one discrete time unit.
+ie cycle == a pair of tick and tock (or) low and high signals
+
+each time unit consist of 2 phases.
+1)	A 'tick' ends the first phase of a time unit and starts its second phase
+	so tick ends the high phase and starts low phase
+2)	A 'tock' ends the second phase of time unit & signals first phase of he next time unit
+	so tock starts the high phase of next time unit
+
+nth cycle is represented as tock n followed by tick n+
+			 tock  tick
+So cycle 0 	-	-	0+
+   cycle 1	-	1	1+
+   cycle 2	-	2 	2+
+   cycle 3	-	3	3+
+   ..................
+
+	0+	1	1+	2	2+	3	3+	4	4+	5	5+  
+	    ___ 	___ 	___  	___ 	___ 	
+	   |   |   |   |   |   |   |   |   |   |   |
+	___|   |___|   |___|   |___|   |___|   |___|
+
+
+	tick|tock|tick|tock|...
+
+DFF (Data Flipflop)
+-------------------
+	 _________
+	|         |
+  --| D       |-- Q
+	|         |
+	|         |
+	|>        |-- !Q
+	|_________|
+
+Characteristic Table
+
+	D 	Q 	Q+	
+	0	0	0	RST
+	0	1	0	RST
+	1	0	1	SET
+	1	1	1	SET
+
+DFF simply outputs the input value from the previous time unit
+Out(t) = In(t-1)
+
+when the clock is not at a positive edge . the DFF ignores D,
+However at the positive edge,it reads in the value D ,and based on it ,updates Q
+Simply say,it takes the value of D.
+
+Bit(Binary Cell) & Register
+---------------------------
+are storage devices that can store or remember a value over time, ie Out(t) = Out(t-1)
+
+if load(t-1)==1 Out(t) = In(t-1) else Out(t) = Out(t-1)
+
+a 'w' bit register can be constructed from an array of 'w' single Bit registers. 
+
+RAM
+---
+data width - width of each one of its words	(16)
+size	-	number of words in the RAM
+
+RAM8
+----
+is built from 8 registers
+
+[!!!]in the case of read operation (load=0),the RAM's output immediately emits the value of the selected register.ie time-independent
+[!!!]in the case of write operation (load=1),the selected memory register commits to the input value in the next time unit,at which 	point the RAM's output will starts emitting it.
+
+RAM64 	- 8*RAM8
+RAM512	- 8*RAM64
+RAM4K	- 8*RAM512
+RAM16K	- 4*RAM4K
+
+PC
+--
+Out(t) = Out(t-1) + c
+
+Sequential Chip[NOTE]
+
+Sequential Chips are unstable during clock cycles,they will output correct values at the beginning of next cycle only.
+
+the length of the clock cycle should be slightly longer than that the time it takes a bit to travel the longest distance from one Chip in the architecture to another.
+
+HDL[NOTE]
+
+if Xxx.hdl exists in the current directory
+	then load it
+else if Xxx.hdl exists in BuiltIn Directory
+	then load it
+else
+	Issue an error message
